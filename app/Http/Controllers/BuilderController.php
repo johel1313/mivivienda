@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Builder;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
@@ -36,7 +37,12 @@ class BuilderController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        if ($request->ajax()) {
+            Builder::create($request->all());
+            return response()->json([
+                'Mensaje' => 'Creado satisfactoriamente'
+            ]);
+        }
     }
 
     /**

@@ -17,7 +17,7 @@ $('#ticketsubmit').click(function () {
     var district = $('#ticketdistrict').val();
     var user_id = $('#ticketuserid').val();
     var trackingDate = $('#ticketTracking').val();
-    var promoterid= $('#ticketpromoter').val();
+    var promoterid = $('#ticketpromoter').val();
     var route = 'http://localhost:8000/tickets/create';
 
     $.ajax({
@@ -41,7 +41,7 @@ $('#ticketsubmit').click(function () {
             canton: canton,
             district: district,
             user_id: user_id,
-            promoter_id:promoterid
+            promoter_id: promoterid
         },
 
         success: function () {
@@ -199,7 +199,7 @@ function showPromoter(btn) {
 
     $.get(routeEdit, function (res) {
         //response
-        $('#promoter-id').val(res.id)
+        $('#promoter-id').val(res.id);
         $('#promoter-name').val(res.name);
         $('#promoter-last-name').val(res.last_name);
         $('#promoter-phone').val(res.phone);
@@ -225,7 +225,7 @@ $('#promoterUpdate').click(function () {
         headers: {'X-CSRF-TOKEN': token},
         type: 'PUT',
         dataType: 'json',
-        data: {name:name, last_name:last_name, phone:phone, cellphone:cellphone, email:email},
+        data: {name: name, last_name: last_name, phone: phone, cellphone: cellphone, email: email},
         success: function () {
             $('#promoters-modal').modal('toggle');
             swal("Actualizado", "Se han actualizado los campos correctamente", "success");
@@ -265,13 +265,64 @@ function deletePromoter(btn) {
                 }
 
             });
-        });}
+        });
+}
 
 // DELETE A PROMOTER \\
-
 
 
 // END EDIT A PROMOTER INSTANCE\\
 
 
-//Date picker
+// START CREATE A NEW BUILDER INSTANCE\\
+
+$('#builder-create').click(function () {
+    var name = $('#builder-name').val();
+    var last_name = $('#builder-last-name').val();
+    var main_contact = $('#builder-main-contact').val();
+    var civil_status = $('#builder-civil-status').val();
+    var province = $('#builder-province').val();
+    var canton = $('#builder-canton').val();
+    var district = $('#builder-district').val();
+    var address = $('#builder-address').val();
+    var token = $('#builder-token').val();
+    var route = 'http://localhost:8000/builders';
+
+    $.ajax({
+        url: route,
+        headers: {'X-CSRF-TOKEN': token},
+        type: 'POST',
+        dataType: 'json',
+        data: {
+            name: name,
+            last_name: last_name,
+            main_contact: main_contact,
+            civil_status: civil_status,
+            province: province,
+            canton: canton,
+            district: district,
+            address: address
+        },
+
+        success: function () {
+            swal({
+                title: "Se ha añadido un nuevo promotor",
+                text: "<a href='create' class='btn btn-info'>Agregar un nuevo Constructor</a>",
+                html: true,
+                type: "success",
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Cerrar",
+                closeOnConfirm: false
+            })
+
+        }
+
+    }).fail(function () {
+        swal("Error", "Por favor verifica los campos", "error")
+    })
+
+
+    ;
+});
+
+

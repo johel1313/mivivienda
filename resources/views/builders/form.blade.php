@@ -1,5 +1,8 @@
 <div class="box-body">
 
+    <input type="hidden" name="_token" value="{{csrf_token()}}" id="builder-token">
+    <input type="hidden" name="id" id="builder-id">
+
 
     <div class="col-sm-4">
         <input class="form-control" id="builder-name" placeholder="Nombre" type="text">
@@ -21,7 +24,8 @@
     </div>
 
     <div class="col-sm-4">
-        <textarea class="form-control" rows="3" placeholder="Dirección Exacta" name="address"></textarea>
+        <textarea class="form-control" rows="3" placeholder="Dirección Exacta" id="builder-address"
+                  name="address"></textarea>
     </div>
 
 
