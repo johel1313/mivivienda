@@ -16,10 +16,9 @@
             <form class="form-horizontal">
                     @include('builders.form')
                 <!-- /.box-body -->
-                <div class="box-footer">
-                    <button type="submit" class="btn btn-default">Cancel</button>
-                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
-                </div>
+                        <div class="box-footer">
+                            <a href="#" class="btn btn-default" id="builder-create">Guardar</a>
+                        </div>
                 <!-- /.box-footer -->
             </form>
         </div>
