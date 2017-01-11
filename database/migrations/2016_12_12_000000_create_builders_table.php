@@ -15,6 +15,7 @@ class CreateBuildersTable extends Migration
         Schema::create('builders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->string('last_name');
             $table->string('main_contact');
             $table->longText('address');
             $table->string('civil_status');

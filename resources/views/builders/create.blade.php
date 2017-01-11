@@ -7,6 +7,21 @@
 
 @section('main-content')
     <div class="container spark-screen">
-       
+        <div class="box box-info">
+            <div class="box-header with-border">
+                <h3 class="box-title">Horizontal Form</h3>
+            </div>
+            <!-- /.box-header -->
+            <!-- form start -->
+            <form class="form-horizontal">
+                    @include('builders.form')
+                <!-- /.box-body -->
+                <div class="box-footer">
+                    <button type="submit" class="btn btn-default">Cancel</button>
+                    <button type="submit" class="btn btn-info pull-right">Sign in</button>
+                </div>
+                <!-- /.box-footer -->
+            </form>
+        </div>
     </div>
 @endsection
