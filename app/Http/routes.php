@@ -41,7 +41,7 @@ Route::PUT('tickets/update/{id}', 'TicketsController@update');
 Route::DELETE('tickets/delete/{id}','TicketsController@destroy');
 /* END TICKETS CONTROLLER AND ROUTES CRUD*/
 
-
+Route::get('pdf', 'TicketsController@pdf');
 
 
 /* DASHBOARD ROUTES*/

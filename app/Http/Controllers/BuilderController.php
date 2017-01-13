@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Builder;
 use Illuminate\Http\Request;
-
+use App\Provincia;
+use App\Canton;
+use App\Distrito;
 use App\Http\Requests;
 
 class BuilderController extends Controller
@@ -16,7 +18,11 @@ class BuilderController extends Controller
      */
     public function index()
     {
-        //
+        $provinces = Provincia::select('nombre')->get();
+        $cantones = Canton::select('nombre')->get();
+        $districts = Distrito::select('nombre')->get();
+        $builders = Builder::all();
+        return view('builders.list', compact('builders', 'provinces', 'cantones', 'districts'));
     }
 
     /**
@@ -26,7 +32,10 @@ class BuilderController extends Controller
      */
     public function create()
     {
-       return view('builders.create');
+        $provinces = Provincia::select('nombre')->get();
+        $cantones = Canton::select('nombre')->get();
+        $districts = Distrito::select('nombre')->get();
+        return view('builders.create', compact('provinces', 'cantones', 'districts'));
     }
 
     /**
@@ -64,7 +73,10 @@ class BuilderController extends Controller
      */
     public function edit($id)
     {
-        //
+        $Builder = Builder::find($id);
+        return response()->json(
+            $Builder->toArray()
+        );
     }
     
     /**
@@ -76,7 +88,12 @@ class BuilderController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $builder = Builder::find($id);
+        $builder->fill($request->all());
+        $builder->save();
+        return response()->json([
+            'mensaje' => 'actualizado'
+        ]);
     }
 
     /**
@@ -87,6 +104,10 @@ class BuilderController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $builder = Builder::find($id);
+        $builder->delete();
+        return response()->json([
+            'mensaje' => 'Eliminado'
+        ]);
     }
 }

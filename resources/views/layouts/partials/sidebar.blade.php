@@ -40,6 +40,15 @@
                     <li><a href="/promoters/create">Crear Un Promotor</a></li>
                 </ul>
             </li>
+
+            <li class="treeview">
+                <a href="#"><i class='fa fa-truck'></i> <span>Constructores</span> <i
+                            class="fa fa-angle-left pull-right"></i></a>
+                <ul class="treeview-menu">
+                    <li><a href="/builders">Todos Constructores</a></li>
+                    <li><a href="/builders/create">Crear Un Constructor</a></li>
+                </ul>
+            </li>
         </ul><!-- /.sidebar-menu -->
     </section>
     <!-- /.sidebar -->

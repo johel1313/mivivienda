@@ -28,6 +28,14 @@ class CreateTicketsTable extends Migration
             $table->string('province');
             $table->string('canton');
             $table->string('district');
+            /*ETAPAS*/
+            $table->boolean('first_stage')->default('false');
+            /* SISTEMA DE CHECKS*/
+            $table->boolean('visa')->default('false');
+            $table->boolean('water_availability')->default('false');
+            $table->boolean('dni_up_to_date')->default('false');
+            $table->boolean('conapan_certificate')->default('false');
+            $table->boolean('public_services')->default('false');
             $table->timestamps();
             /*SET USER FOREIGN KEY*/
             $table->integer('user_id')->unsigned();

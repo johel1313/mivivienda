@@ -13,6 +13,7 @@ use App\Canton;
 use  App\User;
 use App\Promoter;
 
+
 /**
  * Class TicketsController
  * @package App\Http\Controllers
@@ -32,6 +33,13 @@ class TicketsController extends Controller
         $districts = Distrito::select('nombre')->get();
         $promoters = Promoter::all();
         return view('tickets.list', compact('tickets', 'provinces', 'cantones', 'districts','promoters'));
+    }
+
+    public function pdf()
+    {
+        $pdf = \App::make('dompdf.wrapper');
+        $pdf->loadHTML('<h1>Test</h1>');
+        return $pdf->stream();
     }
 
     /**
@@ -78,6 +86,11 @@ class TicketsController extends Controller
         /*SET TIME LANGUAGE FROM DATES TO SPANISH*/
         Carbon::setLocale('es');
 
+
+        setlocale(LC_ALL, "es_ES");
+
+        $fecha = strftime("%A %d de %B del %Y");
+
         /*GET TRACKING DATE DIFFERENCE FOR HUMANS FORMAT*/
         $seguimiento = Carbon::createFromFormat('Y-m-d', $trackingDay)->diffForHumans();
 
@@ -103,7 +116,7 @@ class TicketsController extends Controller
         
         
         /*PASS VARIABLES TO A VIEW*/
-        return view('tickets.view', compact('ticket', 'seguimiento', 'author','promoter'));
+        return view('tickets.view', compact('ticket', 'seguimiento', 'author', 'promoter', 'fecha'));
     }
 
     /**

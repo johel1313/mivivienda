@@ -12,7 +12,9 @@
             <!-- Profile Image -->
             <div class="box box-primary">
                 <div class="box-body box-profile">
-                    <img class="profile-user-img img-responsive img-circle" src="http://www.diaglobal.org/_Images/member/Generic_Image_Missing-Profile.jpg" alt="User profile picture">
+                    <img class="profile-user-img img-responsive img-circle"
+                         src="http://www.diaglobal.org/_Images/member/Generic_Image_Missing-Profile.jpg"
+                         alt="User profile picture">
 
                     <h3 class="profile-username text-center">{{$ticket->name}} {{$ticket->lastname}}</h3>
 
@@ -24,11 +26,11 @@
                             <b>Seguimiento</b>
                             @if($seguimiento === 'hace 1 segundo')
 
-                                <a class="pull-right">  <strong>HOY</strong> </a>
+                                <a class="pull-right"> <strong>HOY</strong> </a>
 
-                                @else
-                                <a class="pull-right">  <strong>{{$seguimiento}}</strong> </a>
-                                @endif
+                            @else
+                                <a class="pull-right"> <strong>{{$seguimiento}}</strong> </a>
+                            @endif
 
 
                         </li>
@@ -81,9 +83,9 @@
         <div class="col-md-9">
             <!-- Custom Tabs -->
             <div class="nav-tabs-custom">
-                <ul class="nav nav-tabs">
+                <ul class="nav nav-pills ">
                     <li class="active"><a href="#tab_1" data-toggle="tab">General</a></li>
-                    <li><a href="#tab_2" data-toggle="tab">Tab 2</a></li>
+                    <li><a href="#tab_2" data-toggle="tab">Boleta de Lastre</a></li>
                     <li><a href="#tab_3" data-toggle="tab">Tab 3</a></li>
                 </ul>
                 <div class="tab-content">
@@ -94,31 +96,46 @@
 
                             <div class="col-xs-4">
                                 <label for="name">Nombre</label>
-                                <input type="text" class="form-control" placeholder="{{$ticket->name}}" id="name" disabled="">
+                                <input type="text" class="form-control" placeholder="{{$ticket->name}}" id="name"
+                                       disabled="">
 
                             </div>
 
                             <div class="col-xs-4">
                                 <label for="lastname">Apellidos</label>
-                                <input type="text" class="form-control" placeholder="{{$ticket->lastname}}" id="lastname" disabled="">
+                                <input type="text" class="form-control" placeholder="{{$ticket->lastname}}"
+                                       id="lastname" disabled="">
                             </div>
 
                             <div class="col-xs-4">
                                 <label for="dni">Cedula</label>
-                                <input type="text" class="form-control" placeholder="{{$ticket->dni}}" id="dni" disabled="">
+                                <input type="text" class="form-control" placeholder="{{$ticket->dni}}" id="dni"
+                                       disabled="">
                             </div>
                         </div>
-
-
 
 
                     </div>
                     <!-- /.tab-pane -->
                     <div class="tab-pane" id="tab_2">
+                        <h2 class="text-center" id="lastre-title">Boleta de verificación colocación de lastre</h2>
+                        <p id="lastre-date"><b>Fecha:</b> <span class="text-capitalize">{{$fecha}}</span></p>
+                        <p id="lastre-p1"><b>Beneficiario:</b> <span
+                                    class="text-capitalize">{{$ticket->name}} {{$ticket->lastname}}</span></p>
+                        <p id="lastre-p2">Por medio de este documento yo: <span
+                                    id="lastre-name">{{$ticket->name}} {{$ticket->lastname}}</span> con
+                            cédula: {{$ticket->dni}} manifiesto que se ha
+                            revisado la correcta colocación de lastre en la vivienda.
+                        </p>
 
+                        <p id="lastre-p3"><span class="text-left">Firma ________________ </span> <span
+                                    class="text-right">Constructor _______________ </span></p>
+
+                        <a href="#" class="btn btn-default" id="generate-pdf">Generar pdf</a>
                     </div>
+
                     <!-- /.tab-pane -->
-                    <div class="tab-pane" id="tab_3">
+                    <div class="tab-pane" id="tab_3">s
 
                     </div>
                     <!-- /.tab-pane -->

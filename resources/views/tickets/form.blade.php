@@ -122,7 +122,7 @@
             </div>
 
             <div class="blank-space"></div>
-
+            <div class="clearfix"></div>
             <label for="ticketTracking">Fecha de seguimiento</label>
             <div class="input-group date col-xs-4">
 

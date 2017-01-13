@@ -306,7 +306,7 @@ $('#builder-create').click(function () {
 
         success: function () {
             swal({
-                title: "Se ha añadido un nuevo promotor",
+                title: "Se ha añadido un nuevo constructor",
                 text: "<a href='create' class='btn btn-info'>Agregar un nuevo Constructor</a>",
                 html: true,
                 type: "success",
@@ -325,4 +325,152 @@ $('#builder-create').click(function () {
     ;
 });
 
+// END OF CREATE A NEW BUILDER INSTANCE\\
 
+//START UPDATE BUILDER INSTANCE \\
+
+
+function showBuilder(btn) {
+    console.log(btn.value);
+    var routeEdit = "http://localhost:8000/builders/" + btn.value + "/edit";
+
+    $.get(routeEdit, function (res) {
+        //response
+        $('#builder-id').val(res.id);
+        $('#builder-name').val(res.name);
+        $('#builder-last-name').val(res.last_name);
+        $('#builder-main-contact').val(res.main_contact);
+        $('#builder-civil-status').val(res.civil_status);
+        $('#builder-address').val(res.address);
+        $('#builder-province').val(res.province);
+        $('#builder-district').val(res.district);
+        $('#builder-canton').val(res.canton);
+
+    })
+}
+
+$('#builderUpdate').click(function () {
+
+    var builderID = $('#builder-id').val();
+    var name = $('#builder-name').val();
+    var last_name = $('#builder-last-name').val();
+    var main_contact = $('#builder-main-contact').val();
+    var civil_status = $('#builder-civil-status').val();
+    var address = $('#builder-address').val();
+    var province = $('#builder-province').val();
+    var canton = $('#builder-canton').val();
+    var district = $('#builder-district').val();
+    var token = $('#builder-token').val();
+    var routeUpdate = "http://localhost:8000/builders/" + builderID + "";
+
+
+    $.ajax({
+        url: routeUpdate,
+        headers: {'X-CSRF-TOKEN': token},
+        type: 'PUT',
+        dataType: 'json',
+        data: {
+            name: name,
+            last_name: last_name,
+            main_contact: main_contact,
+            civil_status: civil_status,
+            address: address,
+            province: province,
+            canton: canton,
+            district: district
+        },
+        success: function () {
+            $('#builder-modal').modal('toggle');
+            swal("Actualizado", "Se han actualizado los campos correctamente", "success");
+            setTimeout(function () {
+                location.reload();
+            }, 3000);
+        }
+
+    });
+});
+
+
+// END EDIT INSTANCE PROMOTER  \\
+function deleteBuilder(btn) {
+    var routeDelete = "http://localhost:8000/builders/" + btn.value + "";
+    var token = $('#builder-token').val();
+
+    swal({
+            title: "Estas seguro?",
+            text: "Eliminarás este dato permanetemente",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Si, estoy seguro",
+            closeOnConfirm: false
+        },
+        function () {
+            $.ajax({
+                url: routeDelete,
+                headers: {'X-CSRF-TOKEN': token},
+                type: 'DELETE',
+                dataType: 'json',
+                success: function () {
+                    swal("Eliminado", "Se han eliminado los campos correctamente", "success");
+                    setTimeout(function () {
+                        location.reload();
+                    }, 3000);
+                }
+
+            });
+        });
+}
+
+$(document).ready(function () {
+    $('#generate-pdf').click(function () {
+        var header = $('#lastre-title').text();
+        var date = $('#lastre-date').text();
+        var name = $('#lastre-name').text();
+        var p1 = $('#lastre-p1').text();
+        var p2 = $('#lastre-p2').text();
+        var p3 = $('#lastre-p3').text();
+
+        var docDefinition = {
+
+
+            content: [
+
+               
+                // using a { text: '...' } object lets you set styling properties
+                {text: header, fontSize: 18, style: ['header']},
+                {text: p1, fontSize: 13, style: ['paragraph']},
+
+                // if you set pass an array instead of a string, you'll be able
+                // to style any fragment individually
+                {text: p2, fontSize: 13, style: ['paragraph']},
+
+                {text: p3, fontSize: 13, style: ['paragraph']}
+            ],
+
+            styles: {
+                header: {
+                    fontSize: 18,
+                    bold: true,
+                    alignment: 'center',
+                    margin: [0, 35, 0, 35]
+                },
+                subheader: {
+                    fontSize: 15,
+                    bold: true
+                },
+                paragraph: {
+                    margin: [0, 5, 0, 5]
+                },
+                small: {
+                    fontSize: 8
+                }
+            }
+        };
+
+        pdfMake.createPdf(docDefinition).open();
+    });
+});
+
+
+// DELETE A PROMOTER \\

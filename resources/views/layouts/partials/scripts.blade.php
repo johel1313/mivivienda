@@ -29,4 +29,8 @@
 <script src="{{ asset('/plugins/datatables/jquery.dataTables.min.js') }}" type="text/javascript"></script>
 <!-- DATA TABLES-->
 <script src="{{ asset('/plugins/datatables/dataTables.bootstrap.min.js') }}" type="text/javascript"></script>
+<!-- DATA pdf make-->
+<script src="{{ asset('/plugins/pdfmake/pdfmake.min.js') }}" type="text/javascript"></script>
 
+<!-- DATA pdf make-->
+<script src="{{ asset('/plugins/pdfmake/vfs_fonts.js') }}" type="text/javascript"></script>
