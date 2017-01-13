@@ -17,6 +17,28 @@ $('#ticketsubmit').click(function () {
     var district = $('#ticketdistrict').val();
     var user_id = $('#ticketuserid').val();
     var trackingDate = $('#ticketTracking').val();
+
+    var vis = $('#ticket-visado').is(':checked');
+    var visa = JSON.parse(vis);
+
+    var water = $('#ticket-water-availability').is(':checked');
+    var water_availability = JSON.parse(water);
+
+    var update = $('#ticket-dni-uptodate').is(':checked');
+    var dni_up_to_date = JSON.parse(update);
+
+    var con = $('#ticket-conapan').is(':checked');
+    var conapan_certificate = JSON.parse(con);
+
+    var han = $('#ticket-handicapped').is(':checked');
+    var handicapped_certificate = JSON.parse(han);
+
+    var pub = $('#ticket-public-services').is(':checked');
+    var public_services = JSON.parse(pub);
+
+    var second = $('#ticket-second-stage').is(':checked');
+    var second_stage = JSON.parse(second);
+
     var promoterid = $('#ticketpromoter').val();
     var route = 'http://localhost:8000/tickets/create';
 
@@ -41,7 +63,14 @@ $('#ticketsubmit').click(function () {
             canton: canton,
             district: district,
             user_id: user_id,
-            promoter_id: promoterid
+            promoter_id: promoterid,
+            visa: visa ? 1 : 0,
+            water_availability: water_availability ? 1 : 0,
+            dni_up_to_date: dni_up_to_date ? 1 : 0,
+            conapan_certificate: conapan_certificate ? 1 : 0,
+            handicapped_certificate: handicapped_certificate ? 1 : 0,
+            public_services: public_services ? 1 : 0,
+            second_stage: second_stage ? 1 : 0
         },
 
         success: function () {
@@ -66,6 +95,48 @@ $('#ticketsubmit').click(function () {
 });
 
 //FIN DEL PROCESO//
+
+// PASAR A SEGUNDA ESTAPA ESTA MARCADO\\
+
+$(document).ready(function () {
+
+    if ($('#ticket-second-stage').is(':checked') == true) {
+        $('#second-stage-tab').attr('data-toggle', 'tab');
+    } else {
+        $('#second-stage-tab').attr('data-toggle', '');
+    }
+
+
+    $('#ticket-second-stage').change(function () {
+        if ($(this).is(':checked') == true) {
+            $('#second-stage-tab').attr('data-toggle', 'tab');
+            swal({
+                    title: "Estas Seguro?",
+                    text: "Pasarás este caso a una segunda etapa!",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Si, Confimar",
+                    closeOnConfirm: true
+                },
+                function () {
+                    $('.nav-tabs a[href="#tab_2"]').tab('show');
+                    console.log('enable');
+                });
+
+
+        } else {
+            $('#second-stage-tab').attr('data-toggle', '');
+            console.log('disable');
+            sweetAlert("Oops...", "Segunda etapa del formulario bloqueda", "error");
+        }
+    });
+
+
+});
+
+
+//END INSTACE \\
 
 
 // PROCESO DE EDITAR UNA ENTIDAD CON JQUERY AJAX //
@@ -436,7 +507,7 @@ $(document).ready(function () {
 
             content: [
 
-               
+
                 // using a { text: '...' } object lets you set styling properties
                 {text: header, fontSize: 18, style: ['header']},
                 {text: p1, fontSize: 13, style: ['paragraph']},
@@ -474,3 +545,18 @@ $(document).ready(function () {
 
 
 // DELETE A PROMOTER \\
+
+
+//fix modal force focus
+$.fn.modal.Constructor.prototype.enforceFocus = function () {
+    var that = this;
+    $(document).on('focusin.modal', function (e) {
+        if ($(e.target).hasClass('select2-input')) {
+            return true;
+        }
+
+        if (that.$element[0] !== e.target && !that.$element.has(e.target).length) {
+            that.$element.focus();
+        }
+    });
+};

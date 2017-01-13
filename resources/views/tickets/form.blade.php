@@ -1,8 +1,8 @@
 <div class="nav-tabs-custom">
     <ul class="nav nav-tabs">
         <li class="active"><a href="#tab_1" data-toggle="tab">INFORMACION PERSONAL</a></li>
-        <li><a href="#tab_2" data-toggle="tab">BONO</a></li>
-        <li><a href="#tab_3" data-toggle="tab"></a></li>
+        <li><a href="#tab_2" data-toggle="" id="second-stage-tab">BONO</a></li>
+        <li><a href="#tab_3" data-toggle="" id="third-stage-tab"> TEST</a></li>
     </ul>
     <div class="tab-content">
         <div class="tab-pane active" id="tab_1">
@@ -29,7 +29,8 @@
             </div>
 
             <div class="col-xs-4">
-                <input class="form-control" placeholder="Telefono" type="tel" name="phone" id="ticketphone">
+                <input class="form-control" placeholder="Telefono" type="tel" name="phone" id="ticketphone"
+                       data-inputmask="'mask': '99-9999999'">
             </div>
 
             <div class="col-xs-4">
@@ -121,6 +122,71 @@
                 </select>
             </div>
 
+            <div class="col-xs-4">
+                <label for="tickettype">Tipo de bono</label>
+                <select class="form-control select2 select2-hidden-accessible" name="type" id="tickettype"
+                        style="width: 100%;" tabindex="-1" aria-hidden="true">
+
+                    <option>Reparación de vivienda</option>
+                    <option>Bono Ordinario</option>
+                    <option>Bono de discapacidad</option>
+                    <option>Bono de discapacidad con compra de lote</option>
+                    <option>Adulto mayor</option>
+                </select>
+            </div>
+
+            <div class="blank-space"></div>
+
+            <h3>Inspeccion de campo</h3>
+
+            <div class="col-xs-12">
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="visa" id="ticket-visado" value="false">
+                        Visado
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="water_availability" id="ticket-water-availability" value="false">
+                        Disponibilidad de agua
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="dni_up_to_date" id="ticket-dni-uptodate" value="false">
+                        Cédula al dia
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="conapan_certificate" id="ticket-conapan" value="false">
+                        Carta del CONAPAN
+                    </label>
+                </div>
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="handicapped_certificate" id="ticket-handicapped" value="false">
+                        Carta de comisión (Discapacitados)
+                    </label>
+                </div>
+
+
+                <div class="checkbox">
+                    <label>
+                        <input type="checkbox" name="public_services" id="ticket-public-services" value="false">
+                        Recibo Servicios Publicos
+                    </label>
+                </div>
+
+
+            </div>
+
+
             <div class="blank-space"></div>
             <div class="clearfix"></div>
             <label for="ticketTracking">Fecha de seguimiento</label>
@@ -132,6 +198,18 @@
 
                 <input class="form-control pull-right" id="ticketTracking" type="text" data-date-format="dd-mm-yyyy">
             </div>
+            <div class="clearfix"></div>
+            <div class="blank-space"></div>
+            <div class="row">
+                <div class="col-xs-4">
+                    <div class="checkbox">
+                        <label>
+                            <input type="checkbox" name="second_stage" id="ticket-second-stage" value="false">
+                            Aprobar caso para segunda etapa
+                        </label>
+                    </div>
+                </div>
+            </div>
 
 
 
@@ -139,17 +217,7 @@
         <!-- /.tab-pane -->
         <div class="tab-pane" id="tab_2">
             <div class="row">
-                <div class="col-xs-4">
-                    <label for="tickettype">Tipo de bono</label>
-                    <select class="form-control select2 select2-hidden-accessible" name="type" id="tickettype" style="width: 100%;" tabindex="-1" aria-hidden="true">
 
-                        <option>Reparación de vivienda</option>
-                        <option>Bono Ordinario</option>
-                        <option>Bono de discapacidad</option>
-                        <option>Bono de discapacidad con compra de lote</option>
-                        <option>Adulto mayor</option>
-                    </select>
-                </div>
             </div>
         </div>
         <!-- /.tab-pane -->

@@ -32,5 +32,11 @@
 <!-- DATA pdf make-->
 <script src="{{ asset('/plugins/pdfmake/pdfmake.min.js') }}" type="text/javascript"></script>
 
+<script src="{{ asset('/plugins/input-mask/jquery.inputmask.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/plugins/input-mask/jquery.inputmask.date.extensions.js') }}" type="text/javascript"></script>
+<script src="{{ asset('/plugins/input-mask/jquery.inputmask.extensions.js') }}" type="text/javascript"></script>
+
+
+
 <!-- DATA pdf make-->
 <script src="{{ asset('/plugins/pdfmake/vfs_fonts.js') }}" type="text/javascript"></script>

@@ -61,7 +61,8 @@
                 <!-- /.box-body -->
             </div>
 
-            <div class="modal bs-example-modal-lg fade" tabindex="-1" role="dialog" aria-labelledby="gridSystemModalLabel" id="updateModal">
+            <div class="modal bs-example-modal-lg fade" tabindex="false" role="dialog"
+                 aria-labelledby="gridSystemModalLabel" id="updateModal">
                 <div class="modal-dialog modal-lg" role="document">
                     <div class="modal-content">
                         <div class="modal-header">
