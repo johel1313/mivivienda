@@ -1,14 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="42f14186-8310-4504-8512-a6ec8baf9b2b" name="Default" comment="Cambios 13 enero 8:25 a.m">
+    <list default="true" id="42f14186-8310-4504-8512-a6ec8baf9b2b" name="Default" comment="Cambios 13 enero 1:04 p.m">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Ticket.php" afterPath="$PROJECT_DIR$/app/Ticket.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2016_12_12_000000_create_tickets_table.php" afterPath="$PROJECT_DIR$/database/migrations/2016_12_12_000000_create_tickets_table.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/js/main.js" afterPath="$PROJECT_DIR$/public/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/partials/scripts.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/partials/scripts.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tickets/form.blade.php" afterPath="$PROJECT_DIR$/resources/views/tickets/form.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/tickets/list.blade.php" afterPath="$PROJECT_DIR$/resources/views/tickets/list.blade.php" />
     </list>
     <ignored path="cycmivivienda.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -44,7 +38,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/tickets/form.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="210">
-              <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+              <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
               <folding />
             </state>
           </provider>
@@ -65,7 +59,10 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="449">
               <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-              <folding />
+              <folding>
+                <marker date="1484334292000" expanded="true" signature="3207:4323" ph="{...}" />
+                <marker date="1484334292000" expanded="true" signature="3972:4099" ph="{...}" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -74,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/resources/views/tickets/list.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="384">
-              <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
+              <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
               <folding />
             </state>
           </provider>
@@ -648,7 +645,7 @@
       <workItem from="1484153351114" duration="4470000" />
       <workItem from="1484157910763" duration="17467000" />
       <workItem from="1484258714112" duration="566000" />
-      <workItem from="1484259780232" duration="11439000" />
+      <workItem from="1484259780232" duration="11461000" />
     </task>
     <task id="LOCAL-00001" summary="Cambios 11 enero 11:11 a.m">
       <created>1484154781997</created>
@@ -678,11 +675,18 @@
       <option name="project" value="LOCAL" />
       <updated>1484317756513</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Cambios 13 enero 1:04 p.m">
+      <created>1484334297315</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1484334297315</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127182000" />
+    <option name="totallyTimeSpent" value="127204000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -736,7 +740,8 @@
     <MESSAGE value="Cambios 11 enero 11:42 a.m" />
     <MESSAGE value="Cambios 11 enero 12:33 md" />
     <MESSAGE value="Cambios 13 enero 8:25 a.m" />
-    <option name="LAST_COMMIT_MESSAGE" value="Cambios 13 enero 8:25 a.m" />
+    <MESSAGE value="Cambios 13 enero 1:04 p.m" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios 13 enero 1:04 p.m" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1088,7 +1093,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/tickets/list.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="384">
-          <caret line="71" column="44" selection-start-line="71" selection-start-column="44" selection-end-line="71" selection-end-column="44" />
+          <caret line="72" column="44" selection-start-line="72" selection-start-column="44" selection-end-line="72" selection-end-column="44" />
           <folding />
         </state>
       </provider>
@@ -1097,7 +1102,10 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="449">
           <caret line="126" column="0" selection-start-line="126" selection-start-column="0" selection-end-line="126" selection-end-column="0" />
-          <folding />
+          <folding>
+            <marker date="1484334292000" expanded="true" signature="3207:4323" ph="{...}" />
+            <marker date="1484334292000" expanded="true" signature="3972:4099" ph="{...}" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1112,7 +1120,7 @@
     <entry file="file://$PROJECT_DIR$/resources/views/tickets/form.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="210">
-          <caret line="34" column="34" selection-start-line="34" selection-start-column="34" selection-end-line="34" selection-end-column="34" />
+          <caret line="35" column="34" selection-start-line="35" selection-start-column="34" selection-end-line="35" selection-end-column="34" />
           <folding />
         </state>
       </provider>
